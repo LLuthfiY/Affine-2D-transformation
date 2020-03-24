@@ -60,7 +60,7 @@ for r in range(row):
 
 ![sad](https://github.com/LLuthfiY/Affine-2D-transformation/blob/master/img/scalledOri.jpg)
 
-terdapat ronnga saat men scaling jika menggunakan affine matrix 
+terdapat rongga saat men scaling jika menggunakan affine matrix 
 
 hal itu karena affine hanya merubah posisi
 
