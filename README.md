@@ -1,5 +1,5 @@
-## sistem pakar 112 Asssignment 1 Task 1
-# Affine-2D-transformation
+# sistem pakar 112 Asssignment 1 Task 1
+## Affine-2D-transformation
 
 Muhammad Luthfi A
 1313617033
@@ -7,7 +7,7 @@ Muhammad Luthfi A
 transformation image berupa array 2D dengan python
 
 scaling, translate, dan rotation dilakukan dengan mengkalikan dot product setiap coordinatnya dengan [affine transformation matrix](https://en.wikipedia.org/wiki/Affine_transformation)
-# Scaling
+## Scaling
 
 menggunakan Matrix
 ```
@@ -15,7 +15,7 @@ menggunakan Matrix
  [     0,scaleY, 0],
  [     0,     0, 1]]
 ```
- # Translating
+## Translating
  
  menggunakan Matrix
  ```
@@ -23,7 +23,7 @@ menggunakan Matrix
  [0, 1, TranslateY],
  [0, 0,          1]]
 ```
-# Rotation 
+## Rotation 
 
 menggunakan Matrix
 ```
@@ -31,7 +31,7 @@ menggunakan Matrix
  [sin(theta),  cos(theta), 0],
  [         0,           0, 1]]
 ```
-# projectives 
+## projectives 
 
 ![Azunyan wanna be a kaichoo of keiOnBu](https://github.com/LLuthfiY/Affine-2D-transformation/blob/master/img/projTransformed_FIXLAH.jpg)
 berdasarkan [artikel](https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog) ini
