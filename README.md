@@ -6,7 +6,7 @@ Muhammad Luthfi A
 
 transformation image berupa array 2D dengan python
 
-scaling, translate, dan rotation dilakukan dengan mengkalikan setiap coordinatnya dengan [affine transformation matrix](https://en.wikipedia.org/wiki/Affine_transformation)
+scaling, translate, dan rotation dilakukan dengan mengkalikan dot product setiap coordinatnya dengan [affine transformation matrix](https://en.wikipedia.org/wiki/Affine_transformation)
 # Scaling
 
 menggunakan Matrix
