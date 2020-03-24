@@ -90,3 +90,9 @@ for r in range(zeros.shape[0]):
             newrow, newcol = int(newrow), int(newcol)
             zeros[r][c] = img[newrow][newcol]
 ```
+```
+[A][B] --> [A][A][B][B]
+[C][D]     [A][A][B][B]
+           [C][C][D][D]
+           [C][C][D][D]
+```
