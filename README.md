@@ -34,7 +34,7 @@ menggunakan Matrix
 # projectives 
 
 ![Azunyan wanna be a kaichoo of keiOnBu](https://github.com/LLuthfiY/Affine-2D-transformation/blob/master/img/projTransformed_FIXLAH.jpg)
-
+berdasarkan [artikel](https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog) ini
 projective transformation dilakukan dengan mengkalikan setiap coordinate dengan matrix 
 ```
 [[ H00, H01, H02],
