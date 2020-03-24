@@ -24,31 +24,8 @@ def projtrans(image, bg, p):
         
     H = find4variable(image, bg, p)
     
-    """#get ratio for scalling image------------------------------------------------------
-    RightUpRow, RightUpCol, scale = H @ np.array([0, col -1, 1]).T
-    RightUpRow, RightUpCol = int(RightUpRow/scale), int(RightUpCol/scale) 
     
-    leftBottomRow, leftBottomCol, scale = H @ np.array([row -1, 0, 1]).T
-    leftBottomRow, leftBottomCol = int(leftBottomRow/scale), int(leftBottomCol/scale) 
-    
-    firstpixelRow, firstpixelCol, scale = H @ np.array([0, 0, 1]).T
-    firstpixelRow, firstpixelCol = int(firstpixelRow/scale), int(firstpixelCol/scale)
-    
-    ratioR = np.sqrt((p[2][0] - p[0][0])**2 + (p[2][1] - p[0][1])**2 ) / np.sqrt((leftBottomRow - firstpixelRow)**2 + (leftBottomCol - firstpixelCol)**2)
-    ratioC = np.sqrt((p[1][0] - p[0][0])**2 + (p[1][1] - p[0][1])**2 ) / np.sqrt((RightUpRow - firstpixelRow)**2 + (RightUpCol - firstpixelCol)**2)
-    
-    print (ratioR)
-    print (np.sqrt((p[1][0] - p[0][0])**2 + (p[1][1] - p[0][1])**2 ), '  /  ', np.sqrt((RightUpRow - firstpixelRow)**2 + (RightUpCol - firstpixelCol)))
-    print (image.shape)
-    print ('bg', billboard.shape)
-    image = scalling(image, ratioR, ratioC)
-    print (image.shape)
-    row, col, h = image.shape
-    
-    
-    #---------------------------------------------------------------------------------
-    
-""" 
+
     for r in range(row):
         for c in range(col):
             newRow, newCol, scale = H @ np.array([r, c, 1])
@@ -58,24 +35,6 @@ def projtrans(image, bg, p):
             
     return bg
 
-def scalling (image, arow=1, acol=1): #acol and arow in percent
-    img = image.copy()
-    img = np.array(img)
-    row, col, h = img.shape
-    
-    newrow, newcol = int(row*arow), int(col*acol)
-    
-    zeros = np.zeros(shape=(newrow, newcol, 3))
-    for r in range(zeros.shape[0]):
-        for c in range(zeros.shape[1]):
-           
-            newrow, newcol =  np.array([[1/arow ,0],
-                                        [0, 1/acol]]) @ np.array([r, c]).T
-            newrow, newcol = int(newrow), int(newcol)
-            
-            zeros[r][c] = img[newrow][newcol]
-             
-    return zeros
 
 
 run = projtrans(azunyan, billboard ,((221, 258), (281, 524),(354, 241), (395, 537)))
