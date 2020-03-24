@@ -43,3 +43,50 @@ projective transformation dilakukan dengan mengkalikan setiap coordinate dengan 
 ```
 yang dimana kita dikasih kebebasan untuk mengisi setiap element matrix, untuk melakukan hal tersebut kita membutuhkan 4 coordinate awal dan 4 coordinate akhir, lalu satu coordinate awal akan di bandingkan dengan satu coordinate akhir.
 
+## How they are Translated to code
+
+dengan mengkalikan setiap pixel dengan matrix yang didapat
+```
+def 
+...
+for r in range(row):
+        for c in range(col):
+            newrow, newcol = matrix @ [r, c]
+            newrow, newcol = int(newrow), int(newcol)
+            zeros[newrow][newcol] = img[r][c]
+...
+```
+## interesting things i found while experimenting the program
+
+![sad](https://github.com/LLuthfiY/Affine-2D-transformation/blob/master/img/scalledOri.jpg)
+
+terdapat ronnga saat men scaling jika menggunakan affine matrix 
+
+hal itu karena affine hanya merubah posisi
+
+```
+[A][B] --> [A][ ][B][ ]
+[C][D]     [ ][ ][ ][ ]
+           [C][ ][D][ ]
+           [ ][ ][ ][ ]
+```
+
+maka dari itu saya merubah code nya yang awalnya 
+
+```
+for r in range(row):
+        for c in range(col):
+            newrow, newcol = [r,c] @ np.array([[arow,0],
+                                               [0,acol]])
+            newrow, newcol = int(newrow), int(newcol)
+            zeros[newrow][newcol] = img[r][c]
+```
+menjadi
+```
+for r in range(zeros.shape[0]):
+        for c in range(zeros.shape[1]):
+            newrow, newcol =  np.array([[1/arow ,0],
+                                        [0, 1/acol]]) @ np.array([r, c]).T
+            newrow, newcol = int(newrow), int(newcol)
+            zeros[r][c] = img[newrow][newcol]
+```
